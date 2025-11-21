@@ -1,0 +1,14 @@
+{:source-paths ["src"]
+
+ :dependencies [[org.clojure/clojure "1.11.1"]
+                [org.clojure/clojurescript "1.11.60"]
+                [org.clojure/core.async "1.6.681"]]
+
+ :builds
+ {:lib
+  {:target :npm-module
+   :output-dir "lib"
+   :entries [farcaster-cljs.core]
+   :compiler-options
+   {:infer-externs :auto
+    :output-feature-set :es8}}}}

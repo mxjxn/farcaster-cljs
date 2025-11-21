@@ -1,0 +1,26 @@
+# Compiled output
+/.shadow-cljs
+/node_modules
+/public/js
+/.cpcache
+/target
+
+# Package manager
+package-lock.json
+yarn.lock
+
+# Editor
+.idea
+*.iml
+.vscode
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+.nrepl-port
+.rebel_readline_history

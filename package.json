@@ -1,0 +1,25 @@
+{
+  "name": "farcaster-cljs",
+  "version": "0.1.0",
+  "description": "ClojureScript wrapper for the Farcaster Mini App SDK",
+  "main": "index.js",
+  "scripts": {
+    "watch": "shadow-cljs watch lib",
+    "compile": "shadow-cljs compile lib",
+    "release": "shadow-cljs release lib"
+  },
+  "keywords": [
+    "clojurescript",
+    "farcaster",
+    "web3",
+    "miniapp"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@farcaster/frame-sdk": "^0.4.0"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.28.0"
+  }
+}
