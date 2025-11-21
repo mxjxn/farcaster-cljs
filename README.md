@@ -1,6 +1,6 @@
 # farcaster-cljs
 
-A production-ready ClojureScript wrapper for the [Farcaster Frame SDK](https://docs.farcaster.xyz/reference/frames/sdk), providing idiomatic CLJS access to all Farcaster mini app functionality.
+A production-ready ClojureScript wrapper for the [Farcaster Mini App SDK](https://miniapps.farcaster.xyz/), providing idiomatic CLJS access to all Farcaster mini app functionality.
 
 ## Features
 
@@ -24,7 +24,7 @@ Add to your `shadow-cljs.edn` or `deps.edn`:
 And install the npm dependency:
 
 ```bash
-npm install @farcaster/frame-sdk
+npm install @farcaster/miniapp-sdk
 ```
 
 ## Quick Start
@@ -357,8 +357,9 @@ To use this library in a Farcaster mini app, you'll need:
 1. A `.well-known/farcaster.json` manifest file
 2. Proper splash screen configuration
 3. HTTPS hosting
+4. Node.js 22.11.0 or higher
 
-See the [Farcaster Frames documentation](https://docs.farcaster.xyz/reference/frames/) for complete setup instructions.
+See the [Farcaster Mini Apps documentation](https://miniapps.farcaster.xyz/docs/getting-started) for complete setup instructions.
 
 ## License
 
@@ -366,11 +367,12 @@ MIT
 
 ## Contributing
 
-Issues and PRs welcome! This library aims to provide complete, idiomatic CLJS coverage of the Farcaster Frame SDK.
+Issues and PRs welcome! This library aims to provide complete, idiomatic CLJS coverage of the Farcaster Mini App SDK.
 
 ## Resources
 
-- [Farcaster Frames Documentation](https://docs.farcaster.xyz/reference/frames/)
-- [Farcaster Frame SDK](https://github.com/farcasterxyz/frames)
+- [Farcaster Mini Apps Documentation](https://miniapps.farcaster.xyz/)
+- [Farcaster Mini App SDK](https://github.com/farcasterxyz/miniapps)
+- [@farcaster/miniapp-sdk on npm](https://www.npmjs.com/package/@farcaster/miniapp-sdk)
 - [ClojureScript](https://clojurescript.org/)
 - [Shadow CLJS](https://shadow-cljs.github.io/docs/UsersGuide.html)

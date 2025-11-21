@@ -22,9 +22,8 @@
             [farcaster-cljs.context :as context]
             [farcaster-cljs.wallet :as wallet]
             [farcaster-cljs.specs :as specs]
-            ["@farcaster/frame-sdk" :as fc-sdk]))
+            ["@farcaster/miniapp-sdk" :refer [sdk]]))
 
-(def ^:private sdk (atom nil))
 (def ^:private initialized? (atom false))
 
 ;; Initialization
@@ -46,14 +45,13 @@
         (js/console.warn "SDK already initialized")
         (put! c {:success true :already-initialized true}))
       (try
-        (let [sdk-instance (fc-sdk/default)]
-          (reset! sdk sdk-instance)
-          (reset! initialized? true)
-          ;; Set SDK instance for all modules
-          (actions/set-sdk! sdk-instance)
-          (context/set-sdk! sdk-instance)
-          (wallet/set-sdk! sdk-instance)
-          (put! c {:success true :sdk sdk-instance}))
+        ;; The miniapp SDK is already instantiated as 'sdk'
+        (reset! initialized? true)
+        ;; Set SDK instance for all modules
+        (actions/set-sdk! sdk)
+        (context/set-sdk! sdk)
+        (wallet/set-sdk! sdk)
+        (put! c {:success true :sdk sdk})
         (catch js/Error e
           (js/console.error "Failed to initialize SDK:" e)
           (put! c {:error (.-message e)}))))
@@ -61,9 +59,9 @@
 
 (defn get-sdk
   "Get the raw SDK instance (for advanced usage).
-  Returns nil if not initialized."
+  Always returns the SDK instance."
   []
-  @sdk)
+  sdk)
 
 (defn initialized?
   "Check if the SDK has been initialized."
@@ -175,5 +173,5 @@
   Returns a map with initialization status and available functions."
   []
   {:initialized? @initialized?
-   :sdk-instance (some? @sdk)
+   :sdk-instance (some? sdk)
    :available-namespaces [:actions :context :wallet :specs]})

@@ -17,7 +17,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@farcaster/frame-sdk": "^0.4.0"
+    "@farcaster/miniapp-sdk": "^0.2.0"
   },
   "devDependencies": {
     "shadow-cljs": "^2.28.0"
