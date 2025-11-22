@@ -1,0 +1,23 @@
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        org.clojure/clojurescript {:mvn/version "1.11.60"}
+        org.clojure/core.async {:mvn/version "1.6.681"}}
+
+ :aliases
+ {:jar {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.1.303"}}
+        :exec-fn hf.depstar/jar
+        :exec-args {:jar "target/farcaster-cljs.jar"
+                    :group-id "io.github.mxjxn"
+                    :artifact-id "farcaster-cljs"
+                    :version "0.1.0"
+                    :sync-pom true}}
+
+  :install {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.1.303"}}
+            :exec-fn hf.depstar/install
+            :exec-args {:jar "target/farcaster-cljs.jar"}}
+
+  :deploy {:replace-deps {slipset/deps-deploy {:mvn/version "0.2.2"}}
+           :exec-fn deps-deploy.deps-deploy/deploy
+           :exec-args {:installer :remote
+                       :artifact "target/farcaster-cljs.jar"
+                       :pom-file "pom.xml"}}}}
