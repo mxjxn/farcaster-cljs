@@ -4,6 +4,7 @@
 /public/js
 /.cpcache
 /target
+*.jar
 
 # Package manager
 package-lock.json
